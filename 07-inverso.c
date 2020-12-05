@@ -92,6 +92,7 @@ int inverso(int a, int d)
 
     }
     
+    
     int len2 = sizeof(results)/sizeof(arr[0]); //tamanho da lista de resultados
     
     //interessam-nos o penúltimo e o último elementos
@@ -101,7 +102,6 @@ int inverso(int a, int d)
 
     int leninv = sizeof(inversa)/sizeof(inversa[0]); //tamanho da lista inversa dos quocientes
     
-
     int x, y;
     if (leninv % 2 == 0) // se o tamanho é par, temos penultimo *-1
     {
@@ -135,6 +135,7 @@ int inverso(int a, int d)
     {
         y = penultimo;
         x = ultimo *-1;
+
         if (a > d)
         {
             if (penultimo > ultimo)
