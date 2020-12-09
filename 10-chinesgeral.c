@@ -71,16 +71,14 @@ int chinesgeral(int qtd)
             {
                //printf("mdc(%d, %d) = %d\n", m[i], m[c], euclides(m[i], m[c]));
                result = euclides(m[i], m[c]);
+               if (result != 1)
+                {
+                    return 0;
+                }
             }
         }
-        if (result != 1)
-            {
-                return 0;
-            }
-        else
-        {
-            M = M * m[i];
-        }
+        
+        M = M * m[i];
     }
    int x = 0;
    int Mx[qtd], Sx[qtd];;
@@ -114,6 +112,10 @@ int main()
     if (result != 0)
     {
         printf("X = %d\n", result);
+    }
+    else
+    {
+        printf("Não há resultados possíveis\n");
     }
     
     return 0;
