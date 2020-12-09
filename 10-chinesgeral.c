@@ -51,28 +51,37 @@ int congruencia(int a, int b, int m)
 
 }
 
-
 int chinesgeral(int qtd)
 {
    int a[qtd], m[qtd];
    int M = 1;
-   for (int i = 0; i < qtd; i++)
+   for (int i = 0; i < qtd; i++) //pegando os valores
    {
         printf("Insira o valor de a%d: ", i+1);
         scanf("%d", &a[i]);
         printf("Insira o valor de m%d: ", i+1);
         scanf("%d", &m[i]);
-        if (euclides(a[i], m[i]) == 1)
+   }
+    int result;
+    for (int i = 0; i < qtd; i++) //checando a validade
+    {
+        for (int c = 0; c < qtd; c++)
+        {
+            if (i != c)
+            {
+               //printf("mdc(%d, %d) = %d\n", m[i], m[c], euclides(m[i], m[c]));
+               result = euclides(m[i], m[c]);
+            }
+        }
+        if (result != 1)
+            {
+                return 0;
+            }
+        else
         {
             M = M * m[i];
         }
-        else
-        {
-            printf("Os pares não são primos entre si.\n");
-            return 0;
-        }
-   }
-   
+    }
    int x = 0;
    int Mx[qtd], Sx[qtd];;
    for (int c = 0; c < qtd; c++)

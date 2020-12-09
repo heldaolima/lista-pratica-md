@@ -55,7 +55,7 @@ int congruencia(int a, int b, int m)
 
 int chines(int a1, int m1, int a2, int m2, int a3, int m3)
 {
-    if (euclides(a1, m1) == euclides(a2, m2) == euclides(a3, m3) == 1)
+    if (euclides(m1, m2) == 1 && euclides(m1, m3) == 1 && euclides(m2, m3) == 1)
     {
         int M, M1, M2, M3, r1, r2, r3, s1, s2, s3, x;
         M = m1 * m2 * m3;
@@ -108,10 +108,11 @@ int main()
     scanf("%d", &a3);
     printf("Insira m3: ");
     scanf("%d", &m3);
+    
     int result = chines(a1, m1, a2, m2, a3, m3);
     if (result != 0)
     {
-        printf("x = %d\n", chines(a1, m1, a2, m2, a3, m3));
+       printf("x = %d\n", chines(a1, m1, a2, m2, a3, m3));
     }
     return 0;
 }
